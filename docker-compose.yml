@@ -1,0 +1,32 @@
+version: '3.0'
+services:
+    xero:
+        image: jaypeng2015/show-me-the-money
+        container_name: xero_mock
+        ports:
+            - '3000:3000'
+        networks:
+            - app-network
+
+    backend:
+        build: ./backend
+        container_name: backend
+        ports:
+            - '3001:3001'
+        depends_on:
+            - xero
+        networks:
+            - app-network
+
+    frontend:
+        build: ./frontend
+        container_name: frontend
+        ports:
+            - '80:3002'
+        depends_on:
+            - backend
+        networks:
+            - app-network
+networks:
+    app-network:
+        driver: bridge
