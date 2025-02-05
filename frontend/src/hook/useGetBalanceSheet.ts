@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { BalanceSheet } from '../types/balance-sheet';
+import { balanceSheet } from '../types/balanceSheetTypes';
 
 type UseGetBalanceSheetResult = {
-    data: BalanceSheet | undefined;
+    data: balanceSheet | undefined;
     error: string | null;
     loading: boolean;
 };
@@ -23,8 +23,8 @@ type UseGetBalanceSheetResult = {
  * - React hooks (useState, useEffect)
  */
 
-export const UseGetBalanceSheet = (): UseGetBalanceSheetResult => {
-    const [data, setData] = useState<BalanceSheet>();
+export const useGetBalanceSheet = (): UseGetBalanceSheetResult => {
+    const [data, setData] = useState<balanceSheet>();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -34,13 +34,18 @@ export const UseGetBalanceSheet = (): UseGetBalanceSheetResult => {
         try {
             setLoading(true);
             setError(null);
-            const response = await fetch(BALANCE_SHEET_URL);
+            const response = await fetch(BALANCE_SHEET_URL, {
+                method: 'GET',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                },
+            });
 
             if (!response.ok) {
                 throw new Error('Failed to fetch balance sheet');
             }
 
-            const result = (await response.json()) as BalanceSheet;
+            const result = (await response.json()) as balanceSheet;
             setData(result);
         } catch (error) {
             setError('Error in fetching balance sheet');

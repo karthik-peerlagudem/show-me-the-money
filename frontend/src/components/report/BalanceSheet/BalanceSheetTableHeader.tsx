@@ -1,7 +1,7 @@
-import { Report } from '../../types/balance-sheet';
+import { report } from '../../../types/balanceSheetTypes';
 
 type TableHeaderProps = {
-    report: Report;
+    report: report;
 };
 
 /**
@@ -10,7 +10,7 @@ type TableHeaderProps = {
  * @component
  * @description Renders the header row of a balance sheet table from report data
  *
- * @param {Report} - Report data containing header row information
+ * @param {report} - Report data containing header row information
  *
  */
 

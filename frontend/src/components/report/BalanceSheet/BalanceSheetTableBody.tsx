@@ -1,8 +1,8 @@
-import { Report } from '../../types/balance-sheet';
-import { BalanceSheetTableRow } from './balance-sheet-table-row';
+import { report } from '../../../types/balanceSheetTypes';
+import { BalanceSheetTableRow } from './BalanceSheetTableRow';
 
 type TableBodyProps = {
-    report: Report;
+    report: report;
 };
 
 /**
@@ -11,7 +11,7 @@ type TableBodyProps = {
  * @component
  * @description Renders the body section of balance sheet table, filtering out header row
  *
- * @param {Report} - Report data containing rows to be displayed
+ * @param {report} - Report data containing rows to be displayed
  *
  * @dependencies
  * - BalanceSheetTableRow component

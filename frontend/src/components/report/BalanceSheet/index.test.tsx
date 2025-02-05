@@ -3,11 +3,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { BalanceSheetReport } from '../src/components/report/balance-sheet-report';
-import { BalanceSheet } from '../src/types/balance-sheet';
+import { BalanceSheetReport } from '../BalanceSheet/index';
+import { balanceSheet } from '../../../types/balanceSheetTypes';
 
 describe('BalanceSheetReport', () => {
-    const mockBalanceSheetData: BalanceSheet = {
+    const mockBalanceSheetData: balanceSheet = {
         result: {
             Status: 'Ok',
             Reports: [

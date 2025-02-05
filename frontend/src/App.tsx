@@ -1,10 +1,11 @@
-import { BalanceSheetReport } from './components/report/balance-sheet-report';
+import { BalanceSheetReport } from './components/report/BalanceSheet/index';
+import { useGetBalanceSheet } from './hook/useGetBalanceSheet';
+import { Header } from './components/header';
+
 import './App.css';
-import { UseGetBalanceSheet } from './hook/use-get-balance-sheet';
-import { Header } from './components/header/header';
 
 function App() {
-    const { data, loading } = UseGetBalanceSheet();
+    const { data, loading } = useGetBalanceSheet();
 
     return (
         <>

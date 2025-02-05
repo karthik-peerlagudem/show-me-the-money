@@ -1,10 +1,10 @@
 import React from 'react';
-import { BalanceSheet } from '../../types/balance-sheet';
-import { BalanceSheetTableBody } from './balance-sheet-table-body';
-import { BalanceSheetTableHeader } from './balance-sheet-table-header';
+import { balanceSheet } from '../../../types/balanceSheetTypes';
+import { BalanceSheetTableBody } from './BalanceSheetTableBody';
+import { BalanceSheetTableHeader } from './BalanceSheetTableHeader';
 
 type BalanceSheetReportProps = {
-    reportData: BalanceSheet | undefined;
+    reportData: balanceSheet | undefined;
 };
 
 /**
@@ -13,7 +13,7 @@ type BalanceSheetReportProps = {
  * @component
  * @description Renders a balance sheet report with headers, titles, and data in tabular format
  *
- * @param {BalanceSheet} - Balance sheet data from API
+ * @param {balanceSheet} - Balance sheet data from API
  *
  *
  * @dependencies

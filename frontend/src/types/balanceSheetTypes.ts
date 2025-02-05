@@ -1,11 +1,11 @@
-export interface BalanceSheet {
+export interface balanceSheet {
     result: {
         Status: string;
-        Reports: Report[];
+        Reports: report[];
     };
 }
 
-export interface Report {
+export interface report {
     ReportID: string;
     ReportName: string;
     ReportType: string;
@@ -13,35 +13,35 @@ export interface Report {
     ReportDate: string;
     UpdatedDateUTC: string;
     Fields: [];
-    Rows: Row[];
+    Rows: row[];
 }
 
-export interface Row {
+export interface row {
     RowType: 'Header' | 'Section' | 'Row' | 'SummaryRow';
     Title?: string;
-    Cells?: Cell[];
-    Rows?: Row[];
+    Cells?: cell[];
+    Rows?: row[];
 }
 
-export interface Cell {
+export interface cell {
     Value: string;
-    Attributes?: Attribute[];
+    Attributes?: attribute[];
 }
 
-export interface Attribute {
+export interface attribute {
     Value: string;
     Id: 'account' | 'fromDate' | 'toDate';
 }
 
-export interface FinancialData {
+export interface financialData {
     currentValue: string;
     previousValue: string;
     accountId?: string;
 }
 
-export interface Section {
+export interface section {
     title: string;
-    rows: Row[];
+    rows: row[];
     totalCurrent: string;
     totalPrevious: string;
 }

@@ -1,8 +1,8 @@
-import { Row } from '../../types/balance-sheet';
-import { formatCurrency } from '../../lib/utils';
+import { row } from '../../../types/balanceSheetTypes';
+import { formatCurrency } from '../../../lib/utils';
 
 type TableRowProps = {
-    row: Row;
+    row: row;
 };
 
 /**
@@ -11,7 +11,7 @@ type TableRowProps = {
  * @component
  * @description Renders different types of rows in a balance sheet table (Section, Row, SummaryRow)
  *
- * @param {Row} - Row data containing type and cell information
+ * @param {row} - Row data containing type and cell information
  *
  */
 

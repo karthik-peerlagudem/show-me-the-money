@@ -9,6 +9,7 @@
 }
 
 .header-title {
-    font-size: (--h2-font-size);
+    font-size: 1.5rem;
     color: var(--body-color);
+    text-align: center;
 }
